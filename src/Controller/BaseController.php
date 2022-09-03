@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Psr\Container\ContainerInterface;
 use Slim\App;
 
 class BaseController {

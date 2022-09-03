@@ -17,18 +17,17 @@ return function ( App $app ) {
 	$app->setBasePath( '/api/v1' );
 	$app
 		->group( '/api/v1', function () use ( $app ) {
-			$authController = new AuthController( $app );
-			$app->post( '/login', function ( $request, $response ) use ( $app, $authController ) {
-				return $authController->user_login( $request, $response );
+			$app->post( '/login', function ( $request, $response ) use ( $app ) {
+				return ( new AuthController( $app ) )->user_login( $request, $response );
 			} );
-			$app->post( '/signup', function ( $request, $response ) use ( $app, $authController ) {
+			$app->post( '/signup', function ( $request, $response ) use ( $app ) {
 				return ( new AuthController( $app ) )->user_signup( $request, $response );
 			} );
 			$app
 				->get( '/get-user', function ( $request, $response ) use ( $app ) {
 					return ( new UserController( $app ) )->getUser( $request, $response );
 				} )
-				->add( AuthTokenMiddleware::class );
+				->add( new AuthTokenMiddleware($app) );
 		} )
-		->add( AuthMiddleware::class );
+		->add( new AuthMiddleware($app) );
 };

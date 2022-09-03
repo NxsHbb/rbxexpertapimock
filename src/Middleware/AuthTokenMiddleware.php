@@ -6,24 +6,25 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Slim\Exception\HttpForbiddenException;
-use Slim\Psr7\Response;
 use App\Traits\ApiResponse;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
+use Slim\App;
 
 final class AuthTokenMiddleware implements MiddlewareInterface {
-	private $session;
+	/**
+	 * @var App
+	 */
+	private $app;
 	use ApiResponse;
 
-	public function __construct() {
+	public function __construct( $app ) {
+		$this->app = $app;
 	}
 
 	public function process( ServerRequestInterface $request, RequestHandlerInterface $handler ): ResponseInterface {
-		$headers = $request->getHeaders();
-		$params  = $request->getQueryParams();
-
-		$api_key = 'abc123';
+		$headers  = $request->getHeaders();
+		$settings = $this->app->getContainer()->get( 'settings' );
 
 		if ( ! isset( $headers['Authorization'][0] ) ) {
 			return $this->sendError( 'Authentication header missing' );
@@ -34,9 +35,8 @@ final class AuthTokenMiddleware implements MiddlewareInterface {
 			return $this->sendError( 'Empty Authentication Token' );
 		}
 
-		$secret_Key = '68V0zWFrS72GbpPreidkQFLfj4v9m3Ti+DXc8OB0gcM=';
 		try {
-			$tokenData = JWT::decode( $token, new Key( $secret_Key, 'HS256' ) );
+			$tokenData = JWT::decode( $token, new Key( $settings['jwt']['secret'], $settings['jwt']['alg'] ) );
 		} catch ( \Exception $e ) {
 			return $this->sendError( $e->getMessage(), 401 );
 		}
