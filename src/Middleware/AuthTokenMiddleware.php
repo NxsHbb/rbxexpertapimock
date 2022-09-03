@@ -12,52 +12,52 @@ use App\Traits\ApiResponse;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-final class AuthTokenMiddleware implements MiddlewareInterface
-{
-    private $session;
-    use ApiResponse;
+final class AuthTokenMiddleware implements MiddlewareInterface {
+	private $session;
+	use ApiResponse;
 
-    public function __construct()
-    {
-    }
+	public function __construct() {
+	}
 
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
-    {
-        $headers = $request->getHeaders();
-        $params = $request->getQueryParams();
+	public function process( ServerRequestInterface $request, RequestHandlerInterface $handler ): ResponseInterface {
+		$headers = $request->getHeaders();
+		$params  = $request->getQueryParams();
 
-        $api_key = 'abc123';
+		$api_key = 'abc123';
 
-        if (!isset($headers['Authorization'][0])) {
-            return $this->sendError('Authentication header missing');
-        }
-        $bRawToken = $headers['Authorization'][0];
-        $bRawTokenArr = explode(' ', $bRawToken);
-        if (empty($bRawTokenArr[1])) {
-            return $this->sendError('Empty Authentication Token');
-        }
-        $token = $bRawTokenArr[1];
+		if ( ! isset( $headers['Authorization'][0] ) ) {
+			return $this->sendError( 'Authentication header missing' );
+		}
+		$bRawToken = $headers['Authorization'][0];
+		list( $bearer, $token ) = explode( 'Bearer ', $bRawToken );
+		if ( empty( $token ) ) {
+			return $this->sendError( 'Empty Authentication Token' );
+		}
 
-        $secret_Key = '68V0zWFrS72GbpPreidkQFLfj4v9m3Ti+DXc8OB0gcM=';
-        try {
-            $tokenData = JWT::decode($token, new Key($secret_Key, 'HS256'));
-        }catch (\Exception $e){
-            return $this->sendError($e->getMessage(), 401);
-        }
+		$secret_Key = '68V0zWFrS72GbpPreidkQFLfj4v9m3Ti+DXc8OB0gcM=';
+		try {
+			$tokenData = JWT::decode( $token, new Key( $secret_Key, 'HS256' ) );
+		} catch ( \Exception $e ) {
+			return $this->sendError( $e->getMessage(), 401 );
+		}
 
-        $now = new \DateTimeImmutable();
-        $serverName = "mobileapp";
+		$now        = new \DateTimeImmutable();
+		$serverName = "mobileapp";
 
-        if ($tokenData->iss !== $serverName ||
-            $tokenData->nbf > $now->getTimestamp() ||
-            $tokenData->exp < $now->getTimestamp()) {
-            return $this->sendError('Unauthorized Authentication Token', 401);
-        }
+		if ( $tokenData->iss !== $serverName ||
+		     $tokenData->nbf > $now->getTimestamp() ||
+		     $tokenData->exp < $now->getTimestamp() ) {
+			return $this->sendError( 'Unauthorized Authentication Token', 401 );
+		}
+		if ( $tokenData->userId ) {
+			return $this->sendError( 'Invalid Authentication user', 401 );
+		}
 //        $params = (array)$request->getParsedBody();
 //        $params['authData'] = $tokenData;
 //        $request->getBody()->write(json_encode($params));
+		global $auth_user_id;
+		$auth_user_id = $tokenData->userId;
 
-
-        return $handler->handle($request);
-    }
+		return $handler->handle( $request );
+	}
 }

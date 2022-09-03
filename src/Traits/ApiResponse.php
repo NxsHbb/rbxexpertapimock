@@ -10,7 +10,7 @@ trait ApiResponse
      * @param       $message
      * @param array $data
      *
-     * @return JsonResponse
+     * @return Response
      */
     protected function sendResponse(array $data, $message = null, $code = 200)
     {
