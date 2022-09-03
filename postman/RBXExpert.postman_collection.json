@@ -1,0 +1,1964 @@
+{
+	"info": {
+		"_postman_id": "9676f85e-206f-4b23-94ec-5d55602189a2",
+		"name": "RBXExpert",
+		"description": "RBXExpert API Documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13016453"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "example@email.com",
+									"description": "email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "string, minimum 8 character long",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "This call authenticates a user to the server."
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "example@email.com",
+											"description": "email",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"description": "string, minimum 8 character long",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:true,\n    data:{\n        user_id: 1234,\n        email: 'example@email.com',\n        auth_token: \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        auth_token_expires_on : \"1661856434\",\n        refresh_token : \"e456gergsr4ef54g5y56br5etge6ryrhy\",\n        refresh_token_expires_on : \"1661856876\",\n        first_name: \"FirstName\",\n        last_name: \"lastName\",\n        personal_balance: 500,\n        avatar_url: \"https://gravatar.com/avatar/2558164808aff3ea95bf17000794bdca?s=400&d=robohash&r=x\"\n        ...\n    },\n    message:'Succesfully logged in.',\n}"
+						},
+						{
+							"name": "Login (Incorrect credential)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "example@email.com",
+											"description": "email",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "wrongpassword",
+											"description": "string, minimum 8 character long",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : false,\n    data : null,\n    message : 'The email or password is incorrect. Please try again.',\n}"
+						}
+					]
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "username",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "example@email.com",
+									"description": "email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "string, minimum 8 character long",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"signup"
+							]
+						},
+						"description": "This call will register a user in the server."
+					},
+					"response": [
+						{
+							"name": "Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "exampl@email.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"description": "string, minimum 8 character long",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/signup",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"signup"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:true,\n    data:{\n        user_id: 1234,\n        email: 'exampl@email.com',\n        first_name: \"FirstName\",\n        last_name: :LastName\",\n        ...\n    },\n    message:'Signup was successful.',\n}"
+						},
+						{
+							"name": "Signup (Failed - Email exists)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "example@email.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"description": "string, minimum 8 character long",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/signup",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"signup"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:false,\n    data:null,\n    message:'An existing user is registered with this email.',\n}"
+						},
+						{
+							"name": "Signup (Failed - Username exists) Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "example@email.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"description": "string, minimum 8 character long",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/signup",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"signup"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:false,\n    data:null,\n    message:'This username has been taken already. Try with a different username.',\n}"
+						}
+					]
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "example@email.com",
+									"description": "email",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/forgot-password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forgot-password"
+							]
+						},
+						"description": "This call will register a user in the server."
+					},
+					"response": [
+						{
+							"name": "Forgot Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "example@email.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/forgot-password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"forgot-password"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:true,\n    data:{\n        email: \"example@email.com\",\n    },\n    message:'A confirmation link hasbeen sent to your email address.',\n}"
+						},
+						{
+							"name": "Forgot Password (Failed)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "example@email.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/forgot-password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"forgot-password"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success: false,\n    data: null,\n    message:'Email address not found.',\n}"
+						}
+					]
+				},
+				{
+					"name": "Log out",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/log-out",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"log-out"
+							]
+						},
+						"description": "This call will register a user in the server."
+					},
+					"response": [
+						{
+							"name": "Log out",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/log-out",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"log-out"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success: true,\n    data: null,\n    message: 'You've been successfully logged out.',\n}"
+						},
+						{
+							"name": "Log out (Failed request)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/log-out",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"log-out"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success: false,\n    data: null,\n    message: 'Something went wrong. Please try again.',\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Auth Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh_token",
+									"value": "byguytu687h6876h86n8b865b6t6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/refresh-token",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"refresh-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh Token (Failed)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/refresh-token",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"refresh-token"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : false,\n    data : null,\n    message : 'Refresh token was expired. Please log in again.',\n}"
+						},
+						{
+							"name": "Refresh Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "refresh_token",
+											"value": "byguytu687h6876h86n8b865b6t6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/refresh-token",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"refresh-token"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : {\n        auth_token : \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        token_expires_on : \"1661856434\",\n        ...\n    },\n    message : 'Auth token successfully refreshed.',"
+						}
+					]
+				},
+				{
+					"name": "Update Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refresh_token",
+									"value": "byguytu687h6876h86n8b865b6t6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/update-refresh-token",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"update-refresh-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateRefresh Token (Failed)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/update-refresh-token",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"update-refresh-token"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : false,\n    data : null,\n    message : 'Failed to update refresh token. Please try again.',\n}"
+						},
+						{
+							"name": "Update Refresh Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "refresh_token",
+											"value": "byguytu687h6876h86n8b865b6t6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/update-refresh-token",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"update-refresh-token"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : {\n        refresh_token : \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        token_expires_on : \"1661856434\",\n        ...\n    },\n    message : 'Refresh token successfully updated.',"
+						}
+					]
+				}
+			],
+			"description": "These are the collection of Login, Register new user, Forgot password and Logout API"
+		},
+		{
+			"name": "Order Management",
+			"item": [
+				{
+					"name": "Get Order counts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/order-counts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"order-counts"
+							]
+						},
+						"description": "This call authenticates a user to the server."
+					},
+					"response": [
+						{
+							"name": "Get Order counts (Failed)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/order-counts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"order-counts"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success: false,\n    data: null,\n    message: 'Failed to load order count. Please try again.',\n}"
+						},
+						{
+							"name": "Get Order counts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/order-counts",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"order-counts"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data:{\n        active : {\n            total_count : 78,\n        },\n        late : {\n            total_count : 29,\n        },\n        completed : {\n            total_count : 49,\n        },\n        ...\n    },\n    message : '',\n}"
+						},
+						{
+							"name": "Get Order counts (All count 0)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/orders-count",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders-count"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:true,\n    data:{\n        active:{\n            total_count : 0,\n        },\n        late: {\n            total_count : 0,\n        },\n        completed:{\n            total_count : 0,\n        }\n    },\n    message:'',\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Order List (specific status)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/orders?sort_by=order-date&status=active&page=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "sort_by",
+									"value": "order-date",
+									"description": "This optional value can be \"delivery-date\" or \"order-date\""
+								},
+								{
+									"key": "status",
+									"value": "active",
+									"description": "This string can be \"active\" , \"late\" or \"completed\""
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Integer value. "
+								}
+							]
+						},
+						"description": "This call authenticates a user to the server."
+					},
+					"response": [
+						{
+							"name": "Get Order List (empty)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/orders?sort_by=delivery-date&status=completed&page=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "sort_by",
+											"value": "delivery-date",
+											"description": "This optional value can be \"delivery-date\" or \"order-date\""
+										},
+										{
+											"key": "status",
+											"value": "completed",
+											"description": "This string can be \"active\" , \"late\" or \"completed\""
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "integer value"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:true,\n    data:{\n        orders:[],\n        pagination : {\n            total_count : 0,\n            per_page : 25,\n            page_count : 0,\n            page : 1\n        },\n        status : \"active\",\n    },\n    message:'',\n}"
+						},
+						{
+							"name": "Get Order List (active)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/orders?status=active&sort_by=order-date&page=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "active",
+											"description": "This string can be \"active\" , \"late\" or \"completed\""
+										},
+										{
+											"key": "sort_by",
+											"value": "order-date",
+											"description": "This optional value can be \"delivery-date\" or \"order-date\""
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "integer value"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : {\n            orders:[\n                {\n                    order_id: 123,\n                    order_status: \"active\",\n                    order_date: \"2022/05/23\",\n                    completion_date: null,\n                    order_price: 500,\n                    order_title: \"Full Setup of 1 Google Text Search Ads Campaign #330\",\n                    order_thumbnail: \"https://demothumbnail.com/26t7bg76g.png\",\n                    order_detail_url: \"https://example.com/orders/detai/1234\",\n                    project_name: \"First Project\",\n                    worker_info : {\n                        worker_name : \"Worker Name\",\n                        worker_id : 12323,\n                        worker_avatar : \"https://gravatar.com/avatar/b920b022d02c6e8f9dbebd8103fcecd3?s=400&d=robohash&r=x\"\n                        ...\n                    },\n                    chat_id : 2323,\n                    ...\n                },\n                {\n                    order_id: 1234,\n                    order_status: \"active\",\n                    order_date: \"2022/08/23\",\n                    completion_date: null,\n                    order_price: 500,\n                    order_title: \"Full Setup of 1 Google Text Search Ads Campaign #330\",\n                    order_thumbnail: \"https://demothumbnail.com/26t7bg76g.png\",\n                    order_detail_url: \"https://example.com/orders/detai/1234\",\n                    project_name: \"Second Project\",\n                    worker_info : {\n                        worker_name : \"Worker Name\",\n                        worker_id : 12323,\n                        worker_avatar : \"https://gravatar.com/avatar/b920b022d02c6e8f9dbebd8103fcecd3?s=400&d=robohash&r=x\"\n                        ...\n                    },\n                    chat_id : 2323,\n                    ...\n                }\n            ],\n            pagination : {\n                total_count : 78,\n                per_page : 25,\n                page_count : 4,\n                page : 1\n            },\n            status : \"active\"\n        },\n    message:'',\n}"
+						},
+						{
+							"name": "Get Order List (active 2nd page)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/orders?status=active&sort_by=order-date&page=2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "active",
+											"description": "This string can be \"active\" , \"late\" or \"completed\""
+										},
+										{
+											"key": "sort_by",
+											"value": "order-date",
+											"description": "This optional value can be \"delivery-date\" or \"order-date\""
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"description": "integer value"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : {\n            orders:[\n                {\n                    order_id: 123,\n                    order_status: \"active\",\n                    order_date: \"2022/08/23\",\n                    completion_date: null,\n                    order_price: 500,\n                    order_title: \"Full Setup of 1 Google Text Search Ads Campaign #330\",\n                    order_thumbnail: \"https://demothumbnail.com/26t7bg76g.png\",\n                    order_detail_url: \"https://example.com/orders/detai/1234\",\n                    project_name: \"First Project\",\n                    worker_info : {\n                        worker_name : \"Worker Name\",\n                        worker_id : 12323,\n                        worker_avatar : \"https://gravatar.com/avatar/b920b022d02c6e8f9dbebd8103fcecd3?s=400&d=robohash&r=x\"\n                        ...\n                    },\n                    chat_id : 2323,\n                    ...\n                },\n                {\n                    order_id: 1234,\n                    order_status: \"active\",\n                    order_date: \"2022/08/23\",\n                    completion_date: null,\n                    order_price: 500,\n                    order_title: \"Full Setup of 1 Google Text Search Ads Campaign #330\",\n                    order_thumbnail: \"https://demothumbnail.com/26t7bg76g.png\",\n                    order_detail_url: \"https://example.com/orders/detai/1234\",\n                    project_name: \"Second Project\",\n                    worker_info : {\n                        worker_name : \"Worker Name\",\n                        worker_id : 12323,\n                        worker_avatar : \"https://gravatar.com/avatar/b920b022d02c6e8f9dbebd8103fcecd3?s=400&d=robohash&r=x\"\n                        ...\n                    },\n                    chat_id : 2323,\n                    ...\n                }\n            ],\n            pagination : {\n                total_count : 78,\n                per_page : 25,\n                page_count : 4,\n                page : 2\n            },\n            status : \"active\"\n        },\n    message:'',\n}"
+						},
+						{
+							"name": "Get Order List (late)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/orders?status=late&sort_by=order-date&page=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "late",
+											"description": "This string can be \"active\" , \"late\" or \"completed\""
+										},
+										{
+											"key": "sort_by",
+											"value": "order-date",
+											"description": "This optional value can be \"delivery-date\" or \"order-date\""
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "integer value"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : {\n            orders:[\n                {\n                    order_id: 123,\n                    order_status: \"late\",\n                    order_date: \"2022/07/23\",\n                    completion_date: null,\n                    order_price: 500,\n                    order_title: \"Full Setup of 1 Google Text Search Ads Campaign #330\",\n                    order_thumbnail: \"https://demothumbnail.com/26t7bg76g.png\",\n                    order_detail_url: \"https://example.com/orders/detai/1234\",\n                    project_name: \"First Project\",\n                    worker_info : {\n                        worker_name : \"Worker Name\",\n                        worker_id : 12323,\n                        worker_avatar : \"https://gravatar.com/avatar/b920b022d02c6e8f9dbebd8103fcecd3?s=400&d=robohash&r=x\"\n                        ...\n                    },\n                    chat_id : 2323,\n                    ...\n                },\n                {\n                    order_id: 1234,\n                    order_status: \"late\",\n                    order_date: \"2022/07/23\",\n                    completion_date: null,\n                    order_price: 500,\n                    order_title: \"Full Setup of 1 Google Text Search Ads Campaign #330\",\n                    order_thumbnail: \"https://demothumbnail.com/26t7bg76g.png\",\n                    order_detail_url: \"https://example.com/orders/detai/1234\",\n                    project_name: \"Second Project\",\n                    worker_info : {\n                        worker_name : \"Worker Name\",\n                        worker_id : 12323,\n                        worker_avatar : \"https://gravatar.com/avatar/b920b022d02c6e8f9dbebd8103fcecd3?s=400&d=robohash&r=x\"\n                        ...\n                    },\n                    chat_id : 2323,\n                    ...\n                }\n            ],\n            pagination : {\n                total_count : 78,\n                per_page : 25,\n                page_count : 4,\n                page : 1\n            },\n            status : \"late\"\n        },\n    message:'',\n}"
+						},
+						{
+							"name": "Get Order List (completed)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/orders?status=completed&sort_by=order-date&page=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "completed",
+											"description": "This string can be \"active\" , \"late\" or \"completed\""
+										},
+										{
+											"key": "sort_by",
+											"value": "order-date",
+											"description": "This optional value can be \"delivery-date\" or \"order-date\""
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "integer value"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : {\n            orders:[\n                {\n                    order_id: 123,\n                    order_status: \"completed\",\n                    order_date: \"2022/06/23\",\n                    completion_date: \"2022/07/22\",\n                    order_price: 500,\n                    order_title: \"Full Setup of 1 Google Text Search Ads Campaign #330\",\n                    order_thumbnail: \"https://demothumbnail.com/26t7bg76g.png\",\n                    order_detail_url: \"https://example.com/orders/detai/1234\",\n                    project_name: \"First Project\",\n                    worker_info : {\n                        worker_name : \"Worker Name\",\n                        worker_id : 12323,\n                        worker_avatar : \"https://gravatar.com/avatar/b920b022d02c6e8f9dbebd8103fcecd3?s=400&d=robohash&r=x\"\n                        ...\n                    },\n                    chat_id : 2323,\n                    ...\n                },\n                {\n                    order_id: 1234,\n                    order_status: \"completed\",\n                    order_date: \"2022/06/23\",\n                    completion_date: \"2022/07/12\",\n                    order_price: $500,\n                    order_title: \"Full Setup of 1 Google Text Search Ads Campaign #330\",\n                    order_thumbnail: \"https://demothumbnail.com/26t7bg76g.png\",\n                    order_detail_url: \"https://example.com/orders/detai/1234\",\n                    project_name: \"Second Project\",\n                    worker_info : {\n                        worker_name : \"Worker Name\",\n                        worker_id : 12323,\n                        worker_avatar : \"https://gravatar.com/avatar/b920b022d02c6e8f9dbebd8103fcecd3?s=400&d=robohash&r=x\"\n                        ...\n                    },\n                    chat_id : 2323,\n                    ...\n                }\n            ],\n            pagination : {\n                total_count : 78,\n                per_page : 25,\n                page_count : 4,\n                page : 1\n            },\n            status : \"completed\"\n        },\n    message:'',\n}"
+						},
+						{
+							"name": "Get Order List (failed)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/orders?sort_by=order-date&status=active&page=1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "sort_by",
+											"value": "order-date",
+											"description": "This optional value can be \"delivery-date\" or \"order-date\""
+										},
+										{
+											"key": "status",
+											"value": "active",
+											"description": "This string can be \"active\" , \"late\" or \"completed\""
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"description": "integer value"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success: false,\n    data: null,\n    message: 'Failed to load orders. Please try again.',\n}"
+						}
+					]
+				}
+			],
+			"description": "Order management related API documentation. (For now only the required api as per design.)"
+		},
+		{
+			"name": "Settings Management",
+			"item": [
+				{
+					"name": "Get Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						},
+						"description": "This call authenticates a user to the server."
+					},
+					"response": [
+						{
+							"name": "Get Settings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/settings",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"settings"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:true,\n    data:{\n        mobile_push: true,\n    },\n    message:'',\n}"
+						}
+					]
+				},
+				{
+					"name": "Save Settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mobile_push",
+									"value": "true",
+									"description": "This is a boolean parameter. Value can be true or false .",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/settings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"settings"
+							]
+						},
+						"description": "This call authenticates a user to the server."
+					},
+					"response": [
+						{
+							"name": "Save Settings",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "mobile_push",
+											"value": "true",
+											"description": "This is a boolean parameter. Value can be true or false .",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/settings",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"settings"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : {\n        mobile_push : true,\n    },\n    message : '',\n}"
+						},
+						{
+							"name": "Save Settings (Failed)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "mobile_push",
+											"value": "true",
+											"description": "This is a boolean parameter. Value can be true or false .",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/settings",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"settings"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : false,\n    data : null,\n    message : 'Error occured. Please try again.',\n}"
+						}
+					]
+				}
+			],
+			"description": "Settings related API"
+		},
+		{
+			"name": "Payment Method",
+			"item": [
+				{
+					"name": "Get Payment Methods",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/payment-methods",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment-methods"
+							]
+						},
+						"description": "This call authenticates a user to the server."
+					},
+					"response": [
+						{
+							"name": "Get Payment Methods",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "examplekey",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://example.com/api/v1/payment-methods",
+									"protocol": "https",
+									"host": [
+										"example",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment-methods"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : [\n            {\n                card_id : 123454,\n                card_last_digits : 4455,\n                card_expiry_year : 2024,\n                card_expiry_month : 04,\n            },\n            {\n                card_id : 435434,\n                card_last_digits : 2323,\n                card_expiry_year : 2023,\n                card_expiry_month : 09,\n            },\n    ],\n    message:'',\n}"
+						}
+					]
+				},
+				{
+					"name": "Save Payment Method",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "last_four_digits",
+									"value": "6789",
+									"description": "integer",
+									"type": "text"
+								},
+								{
+									"key": "card_expiry_year",
+									"value": "2023",
+									"description": "integer Year",
+									"type": "text"
+								},
+								{
+									"key": "card_expiry_month",
+									"value": "09",
+									"description": "integer month",
+									"type": "text"
+								},
+								{
+									"key": "client_secret_token",
+									"value": "cs_ytb65bbg54v754",
+									"description": "string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/payment-methods",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment-methods"
+							]
+						},
+						"description": "This call authenticates a user to the server."
+					},
+					"response": [
+						{
+							"name": "Save Payment Method",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "last_four_digits",
+											"value": "6789",
+											"description": "integer",
+											"type": "text"
+										},
+										{
+											"key": "card_expiry_year",
+											"value": "2023",
+											"description": "integer Year",
+											"type": "text"
+										},
+										{
+											"key": "card_expiry_month",
+											"value": "09",
+											"description": "integer month",
+											"type": "text"
+										},
+										{
+											"key": "client_secret_token",
+											"value": "cs_ytb65bbg54v754",
+											"description": "string",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/payment-methods",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"payment-methods"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    success:true,\n    data:[\n        {\n            card_id : 123454,\n            card_last_digits : 4455,\n            card_expiry_year : 2024,\n            card_expiry_month : 04,\n        },\n        {\n            card_id : 13323,\n            card_last_digits : 4555,\n            card_expiry_year : 2023,\n            card_expiry_month : 01,\n        },\n    ],\n    message : 'Card Added successfully.',\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Payment Method",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{api_key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "card_id",
+									"value": "123433",
+									"description": "number",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/payment-methods",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payment-methods"
+							]
+						},
+						"description": "This call authenticates a user to the server."
+					},
+					"response": [
+						{
+							"name": "Remove Payment Method",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "examplekey",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "card_id",
+											"value": "123433",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://example.com/api/v1/payment-methods",
+									"protocol": "https",
+									"host": [
+										"example",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment-methods"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : null,\n    message : 'Payment method has been successfully removed.',\n}"
+						}
+					]
+				}
+			],
+			"description": "Payment method related API"
+		},
+		{
+			"name": "Profile Management",
+			"item": [
+				{
+					"name": "Get Profile Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/my-profile",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"my-profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Profile Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/my-profile",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"my-profile"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data:{\n        user_id : 1234,\n        email : 'example@email.com',\n        first_name : \"FirstName\",\n        last_name : \"lastName\",\n        personal_balance : \"US$500\",\n        avatar_url : \"https://gravatar.com/avatar/2558164808aff3ea95bf17000794bdca?s=400&d=robohash&r=x\"\n        ...\n    },\n    message:'Successfully fetched profile data.',\n}"
+						},
+						{
+							"name": "Get Profile Data (Failed)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/my-profile",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"my-profile"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success:false,\n    data: null,\n    message:'Failed to load profile data. Please try again.',\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ToS/PPolicy",
+			"item": [
+				{
+					"name": "Get ToS content",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/page/?name=terms-of-service",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "terms-of-service"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get ToS content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/page/?name=terms-of-service",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"page",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "terms-of-service"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    success : true,\n    data :\"<html>\n                <div>\n                    <p>\n                       hello world\n                    </p>\n                </div>\n            </html>\",\n    message :\"\",\n}"
+						},
+						{
+							"name": "Get ToS content (Failed)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/page/?name=terms-of-service",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"page",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "terms-of-service"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : null,\n    message : \"Failed to load Terms of services data. Please try again.\",\n}"
+						}
+					]
+				},
+				{
+					"name": "Get PPolicy content",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/page/?name=privacy-policy",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"page",
+								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "privacy-policy"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get PPolicy content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/page/?name=privacy-policy",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"page",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "privacy-policy"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : \"<html>\n                <div>\n                    <p>\n                        hello world\n                    </p>\n                </div>\n            </html>\",\n    message : \"Succesfully fetched privacy policy data.\",\n}"
+						},
+						{
+							"name": "Get PPolicy content (Failed)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "api_key",
+										"value": "{{apiKey}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/page/?name=privacy-policy",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"page",
+										""
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "privacy-policy"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    success : true,\n    data : null,\n    message :\"Failed to load Privacy policy data. Please try again.\",\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://www.rbxexpert.com/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "apiKey",
+			"value": "bhytgb678-hgfchgf56",
+			"type": "string"
+		}
+	]
+}
