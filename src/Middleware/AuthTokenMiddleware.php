@@ -49,14 +49,12 @@ final class AuthTokenMiddleware implements MiddlewareInterface {
 		     $tokenData->exp < $now->getTimestamp() ) {
 			return $this->sendError( 'Unauthorized Authentication Token', 401 );
 		}
-		if ( $tokenData->userId ) {
+		if ( !$tokenData->userId ) {
 			return $this->sendError( 'Invalid Authentication user', 401 );
 		}
-//        $params = (array)$request->getParsedBody();
-//        $params['authData'] = $tokenData;
-//        $request->getBody()->write(json_encode($params));
+
 		global $auth_user_id;
-		$auth_user_id = $tokenData->userId;
+		$auth_user_id = (int)$tokenData->userId;
 
 		return $handler->handle( $request );
 	}

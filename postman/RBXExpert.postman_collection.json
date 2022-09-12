@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "9676f85e-206f-4b23-94ec-5d55602189a2",
+		"_postman_id": "692bbb4e-27bd-4e4a-92b9-ab9ee30c08c3",
 		"name": "RBXExpert",
 		"description": "RBXExpert API Documentation",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "13016453"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -13,14 +12,11 @@
 				{
 					"name": "Login",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -55,11 +51,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{api_key}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -91,18 +82,13 @@
 							"_postman_previewlanguage": "Text",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    success:true,\n    data:{\n        user_id: 1234,\n        email: 'example@email.com',\n        auth_token: \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        auth_token_expires_on : \"1661856434\",\n        refresh_token : \"e456gergsr4ef54g5y56br5etge6ryrhy\",\n        refresh_token_expires_on : \"1661856876\",\n        first_name: \"FirstName\",\n        last_name: \"lastName\",\n        personal_balance: 500,\n        avatar_url: \"https://gravatar.com/avatar/2558164808aff3ea95bf17000794bdca?s=400&d=robohash&r=x\"\n        ...\n    },\n    message:'Succesfully logged in.',\n}"
+							"body": "{\n    success:true,\n    data:{\n        user_id: 1234,\n        email: 'example@email.com',\n        auth_token: \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        auth_token_expires_on : \"1661856434\",\n        refresh_token: \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        refresh_token_expires_on : \"1661856876\",\n        first_name: \"FirstName\",\n        last_name: \"lastName\",\n        personal_balance: 500,\n        avatar_url: \"https://gravatar.com/avatar/2558164808aff3ea95bf17000794bdca?s=400&d=robohash&r=x\"\n        ...\n    },\n    message:'Succesfully logged in.',\n}"
 						},
 						{
 							"name": "Login (Incorrect credential)",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{api_key}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -141,14 +127,11 @@
 				{
 					"name": "Signup",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -191,11 +174,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{api_key}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -235,11 +213,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{api_key}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -279,11 +252,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{api_key}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -323,14 +291,11 @@
 				{
 					"name": "Forgot Password",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{apiKey}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -361,11 +326,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -399,11 +359,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -437,24 +392,8 @@
 				{
 					"name": "Log out",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{auth_token}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{apiKey}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": []
@@ -479,8 +418,8 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -511,8 +450,8 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -546,13 +485,7 @@
 							"type": "noauth"
 						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{apiKey}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -564,12 +497,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{baseURL}}/refresh-token",
+							"raw": "{{baseURL}}/update-auth-token",
 							"host": [
 								"{{baseURL}}"
 							],
 							"path": [
-								"refresh-token"
+								"update-auth-token"
 							]
 						}
 					},
@@ -580,18 +513,23 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
 								"url": {
-									"raw": "{{baseURL}}/refresh-token",
+									"raw": "{{baseURL}}/update-auth-token",
 									"host": [
 										"{{baseURL}}"
 									],
 									"path": [
-										"refresh-token"
+										"update-auth-token"
 									]
 								}
 							},
@@ -605,11 +543,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -622,19 +555,19 @@
 									]
 								},
 								"url": {
-									"raw": "{{baseURL}}/refresh-token",
+									"raw": "{{baseURL}}/update-auth-token",
 									"host": [
 										"{{baseURL}}"
 									],
 									"path": [
-										"refresh-token"
+										"update-auth-token"
 									]
 								}
 							},
 							"_postman_previewlanguage": "Text",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    success : true,\n    data : {\n        auth_token : \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        token_expires_on : \"1661856434\",\n        ...\n    },\n    message : 'Auth token successfully refreshed.',"
+							"body": "{\n    success : true,\n    data : {\n        auth_token : \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        auth_token_expires_on : \"1661856434\",\n        ...\n    },\n    message : 'Auth token successfully refreshed.',"
 						}
 					]
 				},
@@ -646,11 +579,6 @@
 						},
 						"method": "POST",
 						"header": [
-							{
-								"key": "api_key",
-								"value": "{{apiKey}}",
-								"type": "text"
-							}
 						],
 						"body": {
 							"mode": "formdata",
@@ -678,11 +606,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
-										"type": "text"
-									}
 								],
 								"url": {
 									"raw": "{{baseURL}}/update-refresh-token",
@@ -704,11 +627,6 @@
 							"originalRequest": {
 								"method": "POST",
 								"header": [
-									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
-										"type": "text"
-									}
 								],
 								"body": {
 									"mode": "formdata",
@@ -733,7 +651,7 @@
 							"_postman_previewlanguage": "Text",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    success : true,\n    data : {\n        refresh_token : \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        token_expires_on : \"1661856434\",\n        ...\n    },\n    message : 'Refresh token successfully updated.',"
+							"body": "{\n    success : true,\n    data : {\n        refresh_token : \"hu7h76bbg6giuhtr656687b7656bu65rb65bt6bv65r756\",\n        refresh_token_expires_on : \"1661856434\",\n        ...\n    },\n    message : 'Refresh token successfully updated.',"
 						}
 					]
 				}
@@ -757,13 +675,7 @@
 							]
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "{{base_url}}/order-counts",
 							"host": [
@@ -782,8 +694,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -808,8 +720,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -834,8 +746,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -870,13 +782,7 @@
 							]
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "{{base_url}}/orders?sort_by=order-date&status=active&page=1",
 							"host": [
@@ -912,8 +818,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -955,8 +861,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -998,8 +904,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1041,8 +947,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1084,8 +990,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1127,8 +1033,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1186,13 +1092,7 @@
 							]
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "{{base_url}}/settings",
 							"host": [
@@ -1211,8 +1111,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1247,13 +1147,7 @@
 							]
 						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -1283,8 +1177,8 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1320,8 +1214,8 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1373,13 +1267,7 @@
 							]
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "{{base_url}}/payment-methods",
 							"host": [
@@ -1398,8 +1286,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "examplekey",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1420,7 +1308,7 @@
 							"_postman_previewlanguage": "Text",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    success : true,\n    data : [\n            {\n                card_id : 123454,\n                card_last_digits : 4455,\n                card_expiry_year : 2024,\n                card_expiry_month : 04,\n            },\n            {\n                card_id : 435434,\n                card_last_digits : 2323,\n                card_expiry_year : 2023,\n                card_expiry_month : 09,\n            },\n    ],\n    message:'',\n}"
+							"body": "{\n    success:true,\n    data:[\n        {\n            card_id : 123454,\n            card_last_digits : 4455,\n            card_expiry_year : 2024,\n            card_expiry_month : 04,\n        },\n    ],\n    message:'',\n}"
 						}
 					]
 				},
@@ -1438,13 +1326,7 @@
 							]
 						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -1492,8 +1374,8 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{api_key}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1536,8 +1418,8 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "Text",
+							"header": [],
 							"cookie": [],
 							"body": "{\n    success:true,\n    data:[\n        {\n            card_id : 123454,\n            card_last_digits : 4455,\n            card_expiry_year : 2024,\n            card_expiry_month : 04,\n        },\n        {\n            card_id : 13323,\n            card_last_digits : 4555,\n            card_expiry_year : 2023,\n            card_expiry_month : 01,\n        },\n    ],\n    message : 'Card Added successfully.',\n}"
 						}
@@ -1557,13 +1439,7 @@
 							]
 						},
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{api_key}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -1593,8 +1469,8 @@
 								"method": "DELETE",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "examplekey",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1649,13 +1525,7 @@
 							]
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{apiKey}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "{{baseURL}}/my-profile",
 							"host": [
@@ -1673,8 +1543,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1694,13 +1564,39 @@
 							"body": "{\n    success : true,\n    data:{\n        user_id : 1234,\n        email : 'example@email.com',\n        first_name : \"FirstName\",\n        last_name : \"lastName\",\n        personal_balance : \"US$500\",\n        avatar_url : \"https://gravatar.com/avatar/2558164808aff3ea95bf17000794bdca?s=400&d=robohash&r=x\"\n        ...\n    },\n    message:'Successfully fetched profile data.',\n}"
 						},
 						{
+							"name": "Get Profile Data No Image",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/my-profile",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"my-profile"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    success : true,\n    data:{\n        user_id : 1234,\n        email : 'example@email.com',\n        first_name : \"FirstName\",\n        last_name : \"lastName\",\n        personal_balance : \"US$500\",\n        avatar_color: \"#3cb371\",\n        avatar_text: \"K\"\n        ...\n    },\n    message:'Successfully fetched profile data.',\n}"
+						},
+						{
 							"name": "Get Profile Data (Failed)",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1729,17 +1625,8 @@
 				{
 					"name": "Get ToS content",
 					"request": {
-						"auth": {
-							"type": "noauth"
-						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{apiKey}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "{{baseURL}}/page/?name=terms-of-service",
 							"host": [
@@ -1764,30 +1651,24 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "{{baseURL}}/page/?name=terms-of-service",
+									"raw": "{{baseURL}}/page/",
 									"host": [
 										"{{baseURL}}"
 									],
 									"path": [
 										"page",
 										""
-									],
-									"query": [
-										{
-											"key": "name",
-											"value": "terms-of-service"
-										}
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "Text",
+							"header": [],
 							"cookie": [],
 							"body": "{\n    success : true,\n    data :\"<html>\n                <div>\n                    <p>\n                       hello world\n                    </p>\n                </div>\n            </html>\",\n    message :\"\",\n}"
 						},
@@ -1797,8 +1678,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1819,8 +1700,8 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "Text",
+							"header": [],
 							"cookie": [],
 							"body": "{\n    success : true,\n    data : null,\n    message : \"Failed to load Terms of services data. Please try again.\",\n}"
 						}
@@ -1829,17 +1710,8 @@
 				{
 					"name": "Get PPolicy content",
 					"request": {
-						"auth": {
-							"type": "noauth"
-						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "api_key",
-								"value": "{{apiKey}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "{{baseURL}}/page/?name=privacy-policy",
 							"host": [
@@ -1864,8 +1736,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1886,8 +1758,8 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "Text",
+							"header": [],
 							"cookie": [],
 							"body": "{\n    success : true,\n    data : \"<html>\n                <div>\n                    <p>\n                        hello world\n                    </p>\n                </div>\n            </html>\",\n    message : \"Succesfully fetched privacy policy data.\",\n}"
 						},
@@ -1897,8 +1769,8 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "api_key",
-										"value": "{{apiKey}}",
+										"key": "Authorization",
+										"value": "Bearer {{api_key}}",
 										"type": "text"
 									}
 								],
@@ -1919,8 +1791,8 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "Text",
+							"header": [],
 							"cookie": [],
 							"body": "{\n    success : true,\n    data : null,\n    message :\"Failed to load Privacy policy data. Please try again.\",\n}"
 						}
@@ -1929,6 +1801,16 @@
 			]
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{api_key}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",

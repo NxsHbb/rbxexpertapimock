@@ -21,7 +21,7 @@ class AuthController extends BaseController {
 			return $this->sendError( 'Invalid credential!' );
 		}
 		$date         = new \DateTimeImmutable();
-		$expire_at    = $date->modify( '+20 minutes' )->getTimestamp();      // Add 60 seconds
+		$expire_at    = $date->modify( '+2000 minutes' )->getTimestamp();      // Add 60 seconds
 		$domainName   = "mobileapp";
 		$userId       = 1;                                           // Retrieved from filtered POST data
 		$request_data = [
@@ -69,23 +69,28 @@ class AuthController extends BaseController {
 		return $this->sendResponse( $user, 'Signup was successful.' );
 	}
 
-	public function forgot_pass( Request $request, Response $response ) {
+	public function forgot_password( Request $request, Response $response ) {
 		$params = (array) $request->getParsedBody();
-		if ( ! isset( $params['email'] ) ) {
+		if ( !isset( $params['email'] ) ||$params['email']==='' ) {
 			return $this->sendError( 'Email is missing.' );
 		}
-
 		if ( $params['email'] === 'info@example.com' ) {
-			$user = [
-				'user_id'    => 1234,
-				'email'      => $params['email'],
-				'first_name' => "FirstName",
-				'last_name'  => "LastName",
-			];
-
-			return $this->sendResponse( $user, 'Signup was successful.' );
+            $data= [
+                'email'=> $params['email']
+            ];
+			return $this->sendResponse( $data, 'A confirmation link has been sent to your email address.' );
 		} else {
 			return $this->sendError( 'Email address not found.' );
 		}
 	}
+
+    public function user_logout( Request $request, Response $response ) {
+        global $auth_user_id;
+        if ( $auth_user_id === 1 ) {
+
+            return $this->sendResponse( [], 'You\'ve been successfully logged out.' );
+        } else {
+            return $this->sendError( 'Invalid User' );
+        }
+    }
 }
