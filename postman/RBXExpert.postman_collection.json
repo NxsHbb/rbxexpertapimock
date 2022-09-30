@@ -1996,7 +1996,7 @@
 								},
 								{
 									"key": "message",
-									"value": "test for delete from api",
+									"value": "Attachment",
 									"type": "text"
 								},
 								{
@@ -2007,7 +2007,8 @@
 								},
 								{
 									"key": "attachment_list",
-									"value": "",
+									"value": "315",
+									"description": "attachment ids by comma (1,2,3)",
 									"type": "text"
 								}
 							]
@@ -2119,6 +2120,103 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": \"ok\",\n    \"data\": {\n        \"chat_room_id\": 613,\n        \"user_id\": null,\n        \"client_id\": 2,\n        \"message\": \"test 2\",\n        \"created_at\": 1664423443,\n        \"updated_at\": 1664423443,\n        \"id\": 1825\n    },\n    \"message\": \"Message saved successfully\"\n}"
+						},
+						{
+							"name": "Message send [Attachment succcess]",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-api-key",
+										"value": "{{api_key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "room_id",
+											"value": "613",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "Attachment",
+											"type": "text"
+										},
+										{
+											"key": "delivery_status",
+											"value": "",
+											"description": "step, final",
+											"type": "text"
+										},
+										{
+											"key": "attachment_list",
+											"value": "315",
+											"description": "attachment ids by comma (1,2,3)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/chat/message-send",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"chat",
+										"message-send"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 16:30:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "Expires",
+									"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-store, no-cache, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Upgrade",
+									"value": "h2,h2c"
+								},
+								{
+									"key": "Connection",
+									"value": "Upgrade, Keep-Alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": \"ok\",\n    \"data\": {\n        \"chat_room_id\": 613,\n        \"user_id\": null,\n        \"client_id\": 2,\n        \"message\": \"Attachment\",\n        \"created_at\": 1664555457,\n        \"updated_at\": 1664555457,\n        \"id\": 1828\n    },\n    \"message\": \"Message saved successfully\"\n}"
 						}
 					]
 				},
@@ -2794,7 +2892,7 @@
 								{
 									"key": "attachments",
 									"type": "file",
-									"src": "/Users/mahbubur/Desktop/Screen Shot 2022-09-29 at 10.40.47 AM.png"
+									"src": "/Users/mahbubur/Desktop/PHP-logo.svg.png"
 								}
 							]
 						},
